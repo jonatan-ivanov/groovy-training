@@ -342,7 +342,7 @@ Identity | `is` | Identity check. Since `==` is overridden in with the meaning o
     http://groovy.codehaus.org/groovy-jdk/java/util/Calendar.html
     http://groovy.codehaus.org/groovy-jdk/java/util/Date.html
 - `Object` http://groovy.codehaus.org/groovy-jdk/java/lang/Object.html
-- (demo: 057\_File - 064\_Inspect)
+- (demo: 057\_File - 065\_Inspect)
 
 ##Wait, what?! Metaprogramming
 - Writing of computer programs that write or manipulate other programs (or themselves)
@@ -356,7 +356,7 @@ Identity | `is` | Identity check. Since `==` is overridden in with the meaning o
     `@Immutable`, `@Singleton`, `@Memoized`, `@Synchronized`, `@Log`, `@Grab`
     Project Lombok http://projectlombok.org/features/index.html
 - Extension Module
-- (demo: 065\_MetaClass)
+- (demo: 066\_MetaClass)
 - http://java.dzone.com/articles/introduction-groovy-runtime
 - http://www.infoq.com/presentations/groovy-metaprogramming-1
 - http://www.infoq.com/presentations/groovy-metaprogramming-2
