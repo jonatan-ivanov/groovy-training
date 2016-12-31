@@ -8,13 +8,13 @@ Could be outdated (especially the links).
 - Runs on JVM (compiles to Java bytecode)
 - Optional typing (runtime type checking, binding)
 - Complements Java (dynamic capabilities)
-- Most popular language on the JVM after Java (?)
+- Most popular language on the JVM after Java (?) (based on the old Groovy documentation page)
 - [http://www.groovy-lang.org/](http://www.groovy-lang.org/)
 
 ##Advantages
 - Optional typing
 - Additional powerful features (later)
-    - Function literals/closures (see Java8 lambda expressions)
+    - Function literals/closures (see Java 8 lambda expressions)
     - Cool operators, extensions
     - Native support for
         - Collections
@@ -23,7 +23,7 @@ Could be outdated (especially the links).
 - Supports DSLs
 - Can be used as a scripting language (parse, compile, generate, execute on JVM)
 - You can write Java as Groovy (Java-like syntax)
-- Easy learning curve
+- Flat learning curve
 - Excellent rapid prototyping language
 - Simplified testing (supports unit testing and mocking OOB)
 - IDE support (Eclipse, IntelliJ, NetBeans)
@@ -48,8 +48,8 @@ Could be outdated (especially the links).
     - `groovyc` ~ `javac`
     - `groovy` ~ `java`
     - `.groovy` ~ `.java`
-- The Runtime can call groovyc (source must be on the *classpath*)
-- `groovy -e "println 12.5*Math.PI"`
+- The Runtime can call `groovyc` (source must be on the *classpath*)
+- `groovy -e "println 12.5 * Math.PI"`
 - `groovysh` - Groovy Shell
 - `groovyConsole`
 - `java2groovy`
@@ -76,14 +76,14 @@ java.util.*
 ```
 
 ##Numeric handling
-- Literal floating point numbers (3.1415) are BigDecimals under the hood
+- Literal floating point numbers (`3.1415`) are `BigDecimal`s under the hood
 - Principle of least surprise  
     - [BigDecimal(double)](http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#BigDecimal-double-)
-    - `1 + 0.1 = 1.1` (using BigDecimal(String) automagically)
+    - `1 + 0.1 = 1.1` (using `BigDecimal(String)` automagically)
     - Swaps between numeric types as required (int-double)
     - BEDMAS order: Brackets, Exponents, Division, Multiplication, Addition, Subtraction
     - Power operator: `**`
-- http://groovy.codehaus.org/Groovy+Math
+- [Numbers](http://docs.groovy-lang.org/latest/html/documentation/#_numbers)
 - (demo: 003\_BigDecimal)
 
 ##Dynamic vs. Static
@@ -98,27 +98,28 @@ int z = 1
 z = new Date() //Exception
 ```
 - Tip: Use static types where possible
-- (demo)
+- (demo: run this code snippet)
 
 ##Scopes
 - Classes: like Java: class, method, block
 - Scripts: (not inside class)
     - binding - global scope
     - local - block scope
-
-Variables are in the local scope if they have been **defined***  
-***defined**: static type or `def` keyword  
-**Methods declared in a script don't have access to the local scope**
-
 - (demo: 004\_Scopes01, 005\_Scopes02)
+
+Variables are in the local scope if they have been **defined** *  
+* **defined**: static type or `def` keyword  
+**Methods declared in a script don't have access to the local scope**
 
 ##Collections pt. I.
 - Native support
 - No need to explicitly declare Collections
-- List, Map, Set
-- http://groovy.codehaus.org/Collections
-- http://groovy.codehaus.org/JN1015-Collections
-- http://groovy.codehaus.org/JN1025-Arrays
+- `List`, `Map`, `Set`
+- [Lists](http://docs.groovy-lang.org/latest/html/documentation/#_lists)
+- [Arrays](http://docs.groovy-lang.org/latest/html/documentation/#_arrays)
+- [Maps](http://docs.groovy-lang.org/latest/html/documentation/#_maps)
+- [Working with collections](http://docs.groovy-lang.org/latest/html/documentation/#_working_with_collections)
+- [Collection literal type inference](http://docs.groovy-lang.org/latest/html/documentation/#_collection_literal_type_inference)
 - (demo: 006\_Collections01 - 016\_Collections11)
 
 ##Exception handling
@@ -133,7 +134,7 @@ Variables are in the local scope if they have been **defined***
 
 #Groovy 102 - Into the Groove (Madonna)
 ##Enhanced Strings
-- GString - Extension to the Java String class
+- `GString` - Extension to the Java String class
 - For ordinary Strings apostrophes and double quotes are also valid  
     `println('Hello ' + "World!");`
 - GStings must be defined with double quotes
@@ -145,9 +146,10 @@ Variables are in the local scope if they have been **defined***
 """This GString wraps
 across two lines"""
 ```
-
-- http://groovy.codehaus.org/Strings+and+GString
-- http://groovy.codehaus.org/JN1525-Strings
+- [Strings](http://docs.groovy-lang.org/latest/html/documentation/#all-strings)
+- [GStrings](http://docs.groovy-lang.org/latest/html/documentation/#_gstrings)
+- [GString and String](http://docs.groovy-lang.org/latest/html/documentation/#_gstring_and_string_hashcodes)
+- [Closures in GStrings](http://docs.groovy-lang.org/latest/html/documentation/#_closures_in_gstrings)
 - (demo: 018\_GString)
 
 ##GroovyBeans
@@ -196,7 +198,7 @@ println addFive(3)
 - Doesn't have to have their properties defined in advance
 - It allows you to create dynamic objects via closures
 - Different from a map: you can call methods on the object
-- http://groovy.codehaus.org/gapi/groovy/util/Expando.html
+- [Expando](http://docs.groovy-lang.org/latest/html/documentation/#_expando)
 - (demo: 025\_Expando)
 
 ##Collections pt. II.
