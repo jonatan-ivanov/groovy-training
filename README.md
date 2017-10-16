@@ -1,9 +1,9 @@
-#Groovy - A dynamic language for the Java platform
+# Groovy - A dynamic language for the Java platform
 An old training that I held about Groovy, please check the code examples.  
 Could be outdated (especially the links).
 
-#Foundation - Facts, Advantages, Disadvantages
-##Facts
+# Foundation - Facts, Advantages, Disadvantages
+## Facts
 - Founded in late 2003
 - Runs on JVM (compiles to Java bytecode)
 - Optional typing (runtime type checking, binding)
@@ -11,7 +11,7 @@ Could be outdated (especially the links).
 - Most popular language on the JVM after Java (?) (based on the old Groovy documentation page)
 - [http://www.groovy-lang.org/](http://www.groovy-lang.org/)
 
-##Advantages
+## Advantages
 - Optional typing
 - Additional powerful features (later)
     - Function literals/closures (see Java 8 lambda expressions)
@@ -30,7 +30,7 @@ Could be outdated (especially the links).
 - GroovyConsole
 - (demo: 001\_Hello\_World, 002\_Zero)
 
-##Disadvantages
+## Disadvantages
 - IDE support could be better
 - Code checking/analysis/metrics etc. could be hard or impossible  
     (Checkstyle, PMD, Code Coverage)
@@ -41,8 +41,8 @@ Could be outdated (especially the links).
 - Optional typing (?)
 - Free syntax (?)
 
-#Groovy 101 - It's Groovy baby, yeah! (Austin Powers)
-##Usage
+# Groovy 101 - It's Groovy baby, yeah! (Austin Powers)
+## Usage
 - Java-like installation and usage
     - `GROOVY_HOME` ~ `JAVA_HOME`
     - `groovyc` ~ `javac`
@@ -54,7 +54,7 @@ Could be outdated (especially the links).
 - `groovyConsole`
 - `java2groovy`
 
-##Syntax differences
+## Syntax differences
 - Not required
     - Semicolons at the end of the statements
     - `return` statements
@@ -63,7 +63,7 @@ Could be outdated (especially the links).
 - Auto-generated ctors, getters and setters
 - Script: outside of Class
 
-##Default imports
+## Default imports
 ```
 groovy.lang.*
 groovy.util.*
@@ -75,7 +75,7 @@ java.net.*
 java.util.*
 ```
 
-##Numeric handling
+## Numeric handling
 - Literal floating point numbers (`3.1415`) are `BigDecimal`s under the hood
 - Principle of least surprise  
     - [BigDecimal(double)](http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#BigDecimal-double-)
@@ -86,7 +86,7 @@ java.util.*
 - [Numbers](http://docs.groovy-lang.org/latest/html/documentation/#_numbers)
 - (demo: 003\_BigDecimal)
 
-##Dynamic vs. Static
+## Dynamic vs. Static
 ```
 x = 1.0
 x = new Date() //OK
@@ -100,7 +100,7 @@ z = new Date() //Exception
 - Tip: Use static types where possible
 - (demo: run this code snippet)
 
-##Scopes
+## Scopes
 - Classes: like Java: class, method, block
 - Scripts: (not inside class)
     - binding - global scope
@@ -111,7 +111,7 @@ Variables are in the local scope if they have been **defined** *
 * **defined**: static type or `def` keyword  
 **Methods declared in a script don't have access to the local scope**
 
-##Collections pt. I.
+## Collections pt. I.
 - Native support
 - No need to explicitly declare Collections
 - `List`, `Map`, `Set`
@@ -122,18 +122,18 @@ Variables are in the local scope if they have been **defined** *
 - [Collection literal type inference](http://docs.groovy-lang.org/latest/html/documentation/#_collection_literal_type_inference)
 - (demo: 006\_Collections01 - 016\_Collections11)
 
-##Exception handling
+## Exception handling
 - There is no difference between checked and unchecked exceptions
 - `throws` clauses are ignored
 
-##Equality
+## Equality
 - `==` is the same as `equals()` in Java
 - `is()` for identity check same as `==` in Java
 - null checking: `==` or `is()`
 - (demo: 017\_Equality)
 
-#Groovy 102 - Into the Groove (Madonna)
-##Enhanced Strings
+# Groovy 102 - Into the Groove (Madonna)
+## Enhanced Strings
 - `GString` - Extension to the Java String class
 - For ordinary Strings apostrophes and double quotes are also valid  
     `println('Hello ' + "World!");`
@@ -152,13 +152,13 @@ across two lines"""
 - [Closures in GStrings](http://docs.groovy-lang.org/latest/html/documentation/#_closures_in_gstrings)
 - (demo: 018\_GString)
 
-##GroovyBeans
+## GroovyBeans
 - Omit the explicit getters/setters but you can explicitly implement them
 - Auto-generated ctors: pass a map
 - `@Immutable`, `@Singleton` annotations
 - (demo: 019\_GroovyBeans)
 
-##Closures/Function literals/Anonymous function
+## Closures/Function literals/Anonymous function
 - Special code block that is defined and then executed later
 - It's like a "method pointer"
 - Can be passed to methods
@@ -174,7 +174,7 @@ across two lines"""
     - `delegate`: the same as owner, but changeable
 - (demo: 020\_Closures01, 021\_Closures02, 022\_Closures03)
 
-##Curry
+## Curry
 - A special function that takes a closure and default parameter(s)
 - Returns another closure that only requires the missing parameter(s)
 - `curry`, `rcurry`, `ncurry`
@@ -192,7 +192,7 @@ println addFive(3)
 
 - (demo: 023\_Curry01, 024\_Curry02)
 
-##Expando (Dynamic Object)
+## Expando (Dynamic Object)
 - Represents a dynamically expandable bean
 - "Similar" to a Map
 - Doesn't have to have their properties defined in advance
@@ -201,7 +201,7 @@ println addFive(3)
 - [Expando](http://docs.groovy-lang.org/latest/html/documentation/#_expando)
 - (demo: 025\_Expando)
 
-##Collections pt. II.
+## Collections pt. II.
 - Pass method to the collection
 - `each`, `eachWithIndex`
 - `collect`
@@ -237,7 +237,7 @@ println addFive(3)
 - http://groovy.codehaus.org/groovy-jdk/java/util/Map.html
 - http://groovy.codehaus.org/groovy-jdk/java/lang/Object[].html
 
-##Ranges
+## Ranges
 - List of sequential values
 - Extends `java.util.List`
 - http://groovy.codehaus.org/gapi/groovy/lang/Range.html
@@ -248,7 +248,7 @@ println addFive(3)
 - `'a'..'d'`
 - (demo: 038\_Ranges01 - 044\_Ranges07)
 
-##Safe dereference operator - '?.'
+## Safe dereference operator - '?.'
 ```
 if (person != null) {
     return person.name;
@@ -261,14 +261,14 @@ person?.name;
 ```
 (demo: 045\_SafeDereference01, 046\_SafeDereference02)
 
-##Elvis operator - '?:'
+## Elvis operator - '?:'
 ```
 String travelerStatus = null;
 status = (travelerStatus != null) ? travelerStatus : "Inactive";
 status = travelerStatus ?: "Inactive";
 ```
 
-##Spread operator - '\*.'
+## Spread operator - '\*.'
 - Invokes an action on all items of an aggregate object
 - It is equivalent to call `collect()`
 
@@ -282,7 +282,7 @@ parent.collect{ child -> child?.action }
 println ['a', 'few', 'words']*.size() //[1, 3, 5]
 ```
 
-##++ops
+## ++ops
 Name | Syntax | Description
 ---- | ------ | -----------
 Spaceship | `<=>` | Compares the left and the right side: -1, 0, +1
@@ -296,13 +296,13 @@ Identity | `is` | Identity check. Since `==` is overridden in with the meaning o
 - http://groovy.codehaus.org/Operators#Operators-ArithmeticandConditionalOperators
 - http://www.javacodegeeks.com/2014/01/groovys-smooth-operators.html
 
-##Regular Expressions
+## Regular Expressions
 - `~` creates a Pattern from String `Pattern.compile(".*")`
 - `=~` creates a Matcher `pattern.matcher("aaa")`
 - `==~` tests, if the String matches the pattern `"aaa".matches("a.*")`
 - (demo: 047\_RegEx)
 
-##Dealing with treelike data structures
+## Dealing with treelike data structures
 - XML, JSON, etc.
 - Builders and native language support
 - `XmlParser`: Supports GPath expressions for XML documents and allows updating
@@ -312,14 +312,14 @@ Identity | `is` | Identity check. Since `==` is overridden in with the meaning o
 - http://docs.codehaus.org/display/GROOVY/Processing+XML
 - (demo: 048\_MarkupBuilder01 - 052\_XmlParser02)
 
-##GPath
+## GPath
 - GPath is a path expression language
 - It has similar aims and scope as XPath does for XML
 - Dealing with nested POJOs or dealing with XML, JSON, etc.
 - http://groovy.codehaus.org/GPath
 - (demo: 053\_GPath)
 
-##Memoization
+## Memoization
 - Is an optimization technique
 - Make functions faster by trading space for time
 - Remembering results of method calls
@@ -329,13 +329,13 @@ Identity | `is` | Identity check. Since `==` is overridden in with the meaning o
 - `@Memoized`
 - (demo: 054\_Memoize01, 055\_Memoize02)
 
-#Grape
+# Grape
 - Adds dependencies to your classpath
 - `@Grab` http://groovy.codehaus.org/api/groovy/lang/Grab.html
 - http://groovy.codehaus.org/Grape
 - (demo: 056\_Grape)
 
-##And so on...
+## And so on...
 - IO: `URL`, `File`, `Reader`, `Writer`, `InputStream`, `OutputStream`, `Socket`, `Process`
 - Threads and Processes
 - DSL http://joesgroovyblog.blogspot.hu/2007/09/and-miles-to-go-before-i-sleep.html
@@ -346,7 +346,7 @@ Identity | `is` | Identity check. Since `==` is overridden in with the meaning o
 - `Object` http://groovy.codehaus.org/groovy-jdk/java/lang/Object.html
 - (demo: 057\_File - 065\_Inspect)
 
-##Wait, what?! Metaprogramming
+## Wait, what?! Metaprogramming
 - Writing of computer programs that write or manipulate other programs (or themselves)
 - Runtime
     - Expando
@@ -370,8 +370,8 @@ Identity | `is` | Identity check. Since `==` is overridden in with the meaning o
 - http://www.slideshare.net/aalmiray/groovy-ast-demystified-16213614
 - http://glaforge.appspot.com/article/groovy-ast-transformations-tutorials
 
-#See also - Feeling Groovy (Simon and Garfunkel)
-##Interoperating
+# See also - Feeling Groovy (Simon and Garfunkel)
+## Interoperating
 - Calling Java from Groovy
     - Use the classes as you would in Java
     - `.jar` on the `CLASSPATH`, `import`
@@ -384,8 +384,7 @@ Identity | `is` | Identity check. Since `==` is overridden in with the meaning o
     - Bean Scripting Framework (JSR-223)
     - Embedded Groovy console
 
-##Interoperating - Ant
-
+## Interoperating - Ant
 ```
 <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpathref="project.classpath" />
 <groovyc>
@@ -397,13 +396,13 @@ Identity | `is` | Identity check. Since `==` is overridden in with the meaning o
 </groovyc>
 ```
 
-##Interoperating - Gradle
+## Interoperating - Gradle
 ```
 apply plugin: 'groovy'
 ```
 https://docs.gradle.org/current/userguide/groovy_plugin.html
 
-##Groovy-related projects
+## Groovy-related projects
 - Gradle (Build/project automation) http://www.gradle.org/
 - Grails (Web Application framework) http://grails.org/
 - GSP (Groovy Server Pages) http://groovy.codehaus.org/GSP
@@ -417,7 +416,7 @@ https://docs.gradle.org/current/userguide/groovy_plugin.html
 - Spock (Testing and specification framework) https://code.google.com/p/spock/
 - [...] http://groovy.codehaus.org/Related+Projects
 
-##What's next?
+## What's next?
 - Groovy docs http://groovy.codehaus.org/
 - Groovy wiki snapshot http://docs.codehaus.org/download/attachments/63052/wiki-snapshot.pdf
 - DZone Refcards: Groovy http://cdn.dzone.com/sites/all/files/refcardz/rc015-groovy_online.pdf
